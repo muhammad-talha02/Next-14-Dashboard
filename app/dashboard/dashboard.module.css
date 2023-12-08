@@ -1,0 +1,9 @@
+.container{
+    @apply flex
+}
+.menu{
+    @apply flex-1 bg-[--bgSoft] p-[20px] pr-0 min-h-[100vh]
+}
+.content{
+    @apply flex-[4]
+}
