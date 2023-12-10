@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-
 export const authConfig = {
     providers:[],
     pages:{
@@ -15,7 +13,7 @@ export const authConfig = {
             }
             else if(isLoggedIn){
                 console.log("Loggiinnng")
-                return NextResponse.redirect(new URL("/dashboard", request.url))
+                return Response.redirect(new URL("/dashboard", request.url))
             }
             return true
         }
