@@ -14,7 +14,7 @@ export const authConfig = {
                 return false
             }
             else if(isLoggedIn){
-                console.log("Islofjhfdkjdf")
+                console.log("Loggiinnng")
                 return NextResponse.redirect(new URL("/dashboard", request.url))
             }
             return true
