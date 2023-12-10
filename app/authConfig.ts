@@ -15,8 +15,7 @@ export const authConfig = {
             }
             else if(isLoggedIn){
                 console.log("Loggiinnng")
-                // return NextResponse.redirect(new URL("/dashboard", request.url))
-                return NextResponse.redirect("https://14dashboard.netlify.app/dashboard")
+                return NextResponse.redirect(new URL("/dashboard", request.url))
             }
             return true
         }

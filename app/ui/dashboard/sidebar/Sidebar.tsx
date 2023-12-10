@@ -78,13 +78,13 @@ const menuItems = [
 ];
 
 const Sidebar = async () => {
-  const {user} :any = await auth();
+  const userData :any = await auth();
   return (
     <div className="sidebar">
       <div className="flex items-center gap-5 mb-5 h-[50px] bg-[--bgSoft]">
         <Image
           className="rounded-3xl"
-          src={user?.img || "/noavatar.png"}
+          src={userData?.user?.img || "/noavatar.png"}
           // src={"/noavatar.png"}
           width={50}
           height={50}
@@ -92,7 +92,7 @@ const Sidebar = async () => {
           alt="hdd"
         />
         <div className="flex flex-col">
-          <span className="font-semibold capitalize">{user?.username}</span>
+          <span className="font-semibold capitalize">{userData?.user?.username}</span>
           <span className="text-[14px] text-[--textSoft]">Admin</span>
         </div>
       </div>
