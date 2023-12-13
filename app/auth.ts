@@ -53,9 +53,9 @@ export const { signIn, signOut, auth } = NextAuth({
       }
       return session;
     },
-    // async redirect({ url, baseUrl }) {
-    //   console.log({ url, baseUrl });
-    //   return baseUrl + "/dashboard";
-    // },
+    async redirect({ url, baseUrl }) {
+      console.log({ url, baseUrl });
+      return baseUrl + "/dashboard";
+    },
   },
 });

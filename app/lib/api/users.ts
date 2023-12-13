@@ -106,7 +106,7 @@ export const deleteUser = async (formData: any) => {
 };
 
 export const authenticate = async (formData: any) => {
-  "use client"
+  // "use client"
   const { username, password } = Object.fromEntries(formData);
 
   const test = await signIn("credentials", { username, password })
