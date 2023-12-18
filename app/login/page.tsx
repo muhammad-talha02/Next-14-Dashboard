@@ -1,5 +1,4 @@
 import React from "react";
-import { authenticate } from "../lib/api/users";
 import LoginForm from "../ui/login/LoginForm";
 
 const Login = () => {
