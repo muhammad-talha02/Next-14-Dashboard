@@ -1,9 +1,15 @@
 
+"use client"
+// import { redirect } from "next/navigation";
 import Input from "../form/Input";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  const router = useRouter()
   const handleLogin = async (e: any) => {
     e.preventDefault()
+    router.push("/dashboard")
+    // Router.b
   };
   return (
     <div className="w-full h-full max-h-[370px] max-w-[420px] bg-[--bgSoft] rounded-lg p-5">

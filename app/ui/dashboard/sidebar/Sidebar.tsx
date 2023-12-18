@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import MenuLink from "./MenuLink";
 import styles from "./sidebar.module.css";
@@ -13,7 +14,8 @@ import {
   MdHelpCenter,
   MdLogout,
 } from "react-icons/md";
-import { auth, signOut } from "@/app/auth";
+import { RedirectType, useRouter } from "next/navigation";
+// import { auth, signOut } from "@/app/authtest";
 const menuItems = [
   {
     title: "Pages",
@@ -78,7 +80,13 @@ const menuItems = [
 ];
 
 const Sidebar = async () => {
-  const userData :any = await auth();
+  const userData: any = {};
+  const router = useRouter()
+  const handleLogout = async (e: any) => {
+    e.preventDefault()
+    router.push("/login")
+    // Router.b
+  };
   return (
     <div className="sidebar">
       <div className="flex items-center gap-5 mb-5 h-[50px] bg-[--bgSoft]">
@@ -92,7 +100,7 @@ const Sidebar = async () => {
           alt="hdd"
         />
         <div className="flex flex-col">
-          <span className="font-semibold capitalize">{userData?.user?.username}</span>
+          <span className="font-semibold capitalize">Bruce</span>
           <span className="text-[14px] text-[--textSoft]">Admin</span>
         </div>
       </div>
@@ -110,12 +118,8 @@ const Sidebar = async () => {
           );
         })}
         <form
-          action={async () => {
-            "use server";
-            await signOut();
-          }}
         >
-          <button className="flex gap-3 items-center p-[20px] my-[5px] hover:bg-[#2e374a] rounded-lg w-full">
+          <button className="flex gap-3 items-center p-[20px] my-[5px] hover:bg-[#2e374a] rounded-lg w-full" onClick={handleLogout} >
             <MdLogout /> Logout
           </button>
         </form>

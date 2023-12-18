@@ -5,7 +5,6 @@ import UserModel from "../models/user.model";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import bcrypt from "bcryptjs";
-import { signIn } from "@/app/auth";
 import { resolve } from "path";
 
 export const fetchUsers = async (q: any, page: any) => {
@@ -105,11 +104,11 @@ export const deleteUser = async (formData: any) => {
   revalidatePath("/dashboard/users");
 };
 
-export const authenticate = async (formData: any) => {
-  // "use client"
-  const { username, password } = Object.fromEntries(formData);
+// export const authenticate = async (formData: any) => {
+//   // "use client"
+//   const { username, password } = Object.fromEntries(formData);
 
-  const test = await signIn("credentials", { username, password })
-  console.log("Tes =>", test)
+//   const test = await signIn("credentials", { username, password })
+//   console.log("Tes =>", test)
 
-};
+// };
