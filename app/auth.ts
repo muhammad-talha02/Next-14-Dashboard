@@ -11,10 +11,6 @@ const login = async (credentials: any) => {
 
     const user = await UserModel.findOne({ username: "bruce" });
     if (!user) throw null;
-    // const isPasswordMatch = await bcrypt.compare(credentials.password , user?.password)
-    // const isPasswordMatch = user.password === credentials.password;
-    // console.log("isPasswordMatch", isPasswordMatch);
-    // if (!isPasswordMatch) return null;
     return user;
   } catch (error) {
     console.log(error);

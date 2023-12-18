@@ -110,5 +110,6 @@ export const authenticate = async (formData: any) => {
   const { username, password } = Object.fromEntries(formData);
 
   const test = await signIn("credentials", { username, password })
+  console.log("Tes =>", test)
 
 };
